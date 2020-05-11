@@ -9,7 +9,7 @@ async function sendData(url = '', data = {}, method = "POST") {
     body: JSON.stringify(data)
   });
   return response.json();
-}
+} 
 
 async function addPerson(personObj) {
   return await sendData("https://jsonbox.io/box_4c8006a81a7017b9e6cc", personObj)
