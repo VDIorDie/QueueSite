@@ -1,0 +1,26 @@
+body {
+  padding: 1.5rem;
+}
+
+.container {
+  display: flex;
+  width: 600px;
+}
+
+.container > * {
+  width: 50%;
+}
+
+.queue {
+  margin-right: 1rem;
+  padding: 1rem;
+  background-color: #eee;
+}
+
+.delete-person {
+  color: #eee;
+  
+}
+a:hover {
+  color: #eee
+}
