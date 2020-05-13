@@ -12,15 +12,15 @@ async function sendData(url = '', data = {}, method = "POST") {
 }
 
 async function addPerson(personObj) {
-  return await sendData("https://jsonbox.io/box_4282a05a6be65348307c", personObj)
+  return await sendData("https://jsonbox.io/box_40a74e1e8a4e73ca7d83", personObj)
 }
 
 async function removePerson(id) {
-  return await sendData(`https://jsonbox.io/box_4282a05a6be65348307c/${id}`, {}, "DELETE")
+  return await sendData(`https://jsonbox.io/box_40a74e1e8a4e73ca7d83/${id}`, {}, "DELETE")
 }
 
 async function getPeople() {
-  let res = await fetch("https://jsonbox.io/box_4282a05a6be65348307c?sort=_createdOn");
+  let res = await fetch("https://jsonbox.io/box_40a74e1e8a4e73ca7d83?sort=_createdOn");
   let jsonRes = await res.json();
   return jsonRes;
 }
