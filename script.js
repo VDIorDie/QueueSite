@@ -9,18 +9,18 @@ async function sendData(url = '', data = {}, method = "POST") {
     body: JSON.stringify(data)
   });
   return response.json();
-} 
+}
 
 async function addPerson(personObj) {
-  return await sendData("https://jsonbox.io/box_4c8006a81a7017b9e6cc", personObj)
+  return await sendData("https://jsonbox.io/box_4282a05a6be65348307c", personObj)
 }
 
 async function removePerson(id) {
-  return await sendData(`https://jsonbox.io/box_4c8006a81a7017b9e6cc/${id}`, {}, "DELETE")
+  return await sendData(`https://jsonbox.io/box_4282a05a6be65348307c/${id}`, {}, "DELETE")
 }
 
 async function getPeople() {
-  let res = await fetch("https://jsonbox.io/box_4c8006a81a7017b9e6cc?sort=_createdOn");
+  let res = await fetch("https://jsonbox.io/box_4282a05a6be65348307c?sort=_createdOn");
   let jsonRes = await res.json();
   return jsonRes;
 }
@@ -55,7 +55,7 @@ formElem.addEventListener("submit", async function (event) {
 async function render () {
   let peopleArray = await getPeople();
   let peopleHtml = peopleArray.map(person => {
-    return `<div data-id="${person._id}"><a class="delete-person"href="#">.</a> ${person.name}</div>`;
+    return `<div data-id="${person._id}"><a class="delete-person"href="#">X</a> ${person.name}</div>`;
   }).join("");
   
   queueElem.innerHTML = peopleHtml;
