@@ -31,7 +31,7 @@ async function getPeople() {
 let formElem = document.querySelector("form");
 let personsNameInput = document.querySelector(".persons-name");
 let queueElem = document.querySelector(".queue");
-
+setInterval(render, 1000);
 document.addEventListener("click", async function (event) {
   if (event.target.closest(".delete-person")) {
     event.preventDefault();
@@ -64,7 +64,7 @@ async function render () {
 render();
 
 
-setInterval(render, 2000);
+
 
 
 
