@@ -52,8 +52,15 @@ formElem.addEventListener("submit", async function (event) {
   render();
 });
 
+let preLastId = null
+
 async function render () {
   let peopleArray = await getPeople();
+  
+    if (peopleArray [peopleArray.lenghth - 1]._id === preLastId) {
+    return;
+  }
+  
   let peopleHtml = peopleArray.map(person => {
     return `<div data-id="${person._id}"><a class="delete-person"href="#">X</a> ${person.name}</div>`;
   }).join("");
