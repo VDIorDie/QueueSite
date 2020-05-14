@@ -60,7 +60,7 @@ async function render () {
 }
 
 render();
-
+setInterval(render, 20000);
 
 
 
