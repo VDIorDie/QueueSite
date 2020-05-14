@@ -31,7 +31,7 @@ async function getPeople() {
 let formElem = document.querySelector("form");
 let personsNameInput = document.querySelector(".persons-name");
 let queueElem = document.querySelector(".queue");
-setInterval(render, 1000);
+setInterval(render, 20000);
 document.addEventListener("click", async function (event) {
   if (event.target.closest(".delete-person")) {
     event.preventDefault();
@@ -51,16 +51,8 @@ formElem.addEventListener("submit", async function (event) {
   personsNameInput.value = "";
   render();
 });
-
-let preLastId = null
-
 async function render () {
   let peopleArray = await getPeople();
-  
-    if (peopleArray [peopleArray.lenghth - 1]._id === preLastId) {
-    return;
-  }
-  
   let peopleHtml = peopleArray.map(person => {
     return `<div data-id="${person._id}"><a class="delete-person"href="#">X</a> ${person.name}</div>`;
   }).join("");
