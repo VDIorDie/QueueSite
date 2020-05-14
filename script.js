@@ -53,7 +53,6 @@ formElem.addEventListener("submit", async function (event) {
 });
 
 async function render () {
-  setInterval(refresh, 2000);
   let peopleArray = await getPeople();
   let peopleHtml = peopleArray.map(person => {
     return `<div data-id="${person._id}"><a class="delete-person"href="#">X</a> ${person.name}</div>`;
@@ -65,7 +64,7 @@ async function render () {
 render();
 
 
-
+ setInterval(refresh, 2000);
 
 
 
