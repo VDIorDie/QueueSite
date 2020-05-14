@@ -12,15 +12,15 @@ async function sendData(url = '', data = {}, method = "POST") {
 }
 
 async function addPerson(personObj) {
-  return await sendData("https://jsonbox.io/box_4c8006a81a7017b9e6cc", personObj)
+  return await sendData("https://jsonbox.io/box_afb1558c3924576a15c8", personObj)
 }
 
 async function removePerson(id) {
-  return await sendData(`https://jsonbox.io/box_4c8006a81a7017b9e6cc/${id}`, {}, "DELETE")
+  return await sendData(`https://jsonbox.io/box_afb1558c3924576a15c8/${id}`, {}, "DELETE")
 }
 
 async function getPeople() {
-  let res = await fetch("https://jsonbox.io/box_4c8006a81a7017b9e6cc?sort=_createdOn");
+  let res = await fetch("https://jsonbox.io/box_afb1558c3924576a15c8?sort=_createdOn");
   let jsonRes = await res.json();
   return jsonRes;
 }
@@ -51,6 +51,8 @@ formElem.addEventListener("submit", async function (event) {
   personsNameInput.value = "";
   render();
 });
+
+setInterval(render, 10000);
 
 async function render () {
   let peopleArray = await getPeople();
