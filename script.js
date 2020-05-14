@@ -64,7 +64,7 @@ async function render () {
 render();
 
 
- setInterval(refresh, 2000);
+setInterval(render, 2000);
 
 
 
