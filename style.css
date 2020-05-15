@@ -5,17 +5,12 @@ body {
 }
 
 .container {
-    width: 70%;
-    padding: 20px;
-    background:#181c22;
-    border: 0;
-    float: left;
-    font-size: 20px;
-    color: #e6e6e6;
+  display: flex;
+  width: 600px;
 }
 
 .container > * {
-width: 50%;
+  width: 50%;
 }
 
 .queue {
