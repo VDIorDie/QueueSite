@@ -11,6 +11,7 @@ body {
 
 .container > * {
   width: 50%;
+  float: left;
 }
 
 .queue {
