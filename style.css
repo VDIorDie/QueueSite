@@ -10,8 +10,13 @@ body {
 }
 
 .container > * {
-  width: 50%;
-  float: left;
+    width: 70%;
+    padding: 20px;
+    background:#181c22;
+    border: 0;
+    float: left;
+    font-size: 20px;
+    color: #e6e6e6;
 }
 
 .queue {
